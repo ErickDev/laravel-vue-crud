@@ -13,11 +13,15 @@ new Vue({
                 this.keeps = response.data
             });
         },
-        deleteKeep: function (keep) {
-            var urlKeep = 'tasks/' + keep.id;
-            axios.delete(urlKeep).then(response => {
-                this.getKeeps();
+        deleteKeep: function(keep) {
+            if (!confirm("¿Está seguro de eliminar?")) {
+                return false;
+            }
+            var url = 'tasks/' + keep.id;
+            axios.delete(url).then(response => { //eliminamos
+                this.getKeeps(); //listamos
+            toastr.success('Eliminado correctamente'); //mensaje
             });
-        }
+        }﻿
     }
 });
