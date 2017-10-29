@@ -6,7 +6,9 @@
             <h1 class="page-header">Crud Laravel y Vuejs</h1>
         </div>
         <div class="col-sm-7">
-            <a href="#" class="btn btn-primary pull-right">Nueva tarea</a>
+            <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modal-create">
+                Nueva tarea
+            </a>
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
@@ -28,6 +30,7 @@
                     </tr>
                 </tbody>
             </table>
+            @include('modal-create')
         </div>
         <div class="col-sm-5">
             <pre>
